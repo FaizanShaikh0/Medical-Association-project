@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Set the background image */
+    /* background-image: url('/static/img/fevicon.png'); */
+    /* Set background size and repeat properties if needed */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.header_section{
+    background-color: #020230;
+}
+
+/* Style the outer container for the search bars */
+.search-bars-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Add some space between the search bars */
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    /* Increase the width as desired */
+    width: 250px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* Optional styles for button hover and focus effects */
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 4px #007bff;
+}
+

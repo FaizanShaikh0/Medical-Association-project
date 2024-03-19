@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="/static/images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>NANDED DISTRICT CHEMIST & DRUG ASSOCIATION</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="/static/css/responsive.css" rel="stylesheet" />
+
+  <style>
+    .cs {
+      display: flex;
+      align-items: inline;
+    }
+
+    /* .stock {
+      padding-left: 650px;
+      margin-left: 100px;  
+    }*/
+    .company {
+      margin-left: 700px;
+      /* padding-left: 650px; */
+    }
+
+    .button-container {
+      margin-right: 10px;
+    }
+
+    .my-list {
+      margin-top: 10px;
+      display: none;
+    }
+
+    /* Adjust the height of the select dropdown */
+    .form-control {
+      height: 40px;
+      width: 120%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- header section strats -->
+  <header class="header_section" style="background-color: #020230;">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="index.html">
+          <span>CHEMIST & <br>DRUG ASSOCIATION</span>
+
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="" style="color: #00FF00;"> </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'aboutus' %}">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'search' %}">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'add' %}">Add_details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'show' %}">Show details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}" style="color: #ffffff;">Contact Us</a>
+            </li>
+          </ul>
+          <div class="quote_btn-container">
+            <form class="form-inline">
+
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section style="margin-bottom: 50px;">
+    {% if messages %}
+    <div class="alert alert-danger">
+      <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    <h1 class="text-center mt-4">Fill Details</h1>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-12 ">
+          <div class="bg-light">
+            <div class="card-body">
+
+              <form method="post" id="myForm" action="{% url 'save_details' %}">
+                {% csrf_token %}
+                <div class="cs">
+                  <div class="stock">
+                    <div class="button-container">
+                      <button class="btn btn-primary my-button" type="button" onclick="toggleTable('stockTable')">
+                        <h5> Stockiest Name </h5>
+                      </button>
+                      <div id="stockTable" class="my-list">
+
+                        <select id="stockSelect" name="stock" class="form-control">
+                          <option value="">Select Stockiest</option>
+                          <option value="Liberty">Liberty</option>
+                          <option value="Prime Pharma">Prime Pharma</option>
+                          <option value="Aman Agencies">Aman Agencies</option>
+                          <option value="Aman Agencies">Aman Agencies</option>
+                          <option value="Empire Pharma">Empire Pharma</option>
+                          <option value="AZ pharma">AZ pharma</option>
+                          <option value="Dlip Agency">Dlip Agency</option>
+                          <!-- Add other options for Stockiest Name -->
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="company">
+                    <div class="button-container">
+                      <button class="btn btn-primary" type="button" onclick="toggleTable('companytable')">
+                        <h5> Companies Name</h5>
+                      </button>
+                      <div id="companytable" class="my-list">
+
+                        <select id="companySelect" name="company" class="form-control">
+                          <option value="">Select Company</option>
+                          <option value="cipla">Cipla</option>
+                          <option value="ManKind">ManKind</option>
+                          <option value="Telma">Telma</option>
+                          <option value="Sanofi">Sanofi</option>
+                          <option value="Bayers AG">Bayers AG</option>
+                          <option value="Jonsons Baby">Jonsons Baby</option>
+                          <!-- Add other options for Companies Name -->
+                        </select>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="container text-center mt-5">
+                  <button class="btn btn-success" type="submit" style="margin-top: 100px;"><b>
+                      <h6>Save Details </h6>
+                    </b></button>&nbsp;
+                  <button class="btn btn-danger" type="button" onclick="deleteDetails()" style="margin-top: 100px;"><b>
+                      <h6>Delete Details</h6>
+                    </b></button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="info_section layout_padding2" style="margin-top: 400px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h4>
+              Address
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Nanded
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call : +91 8087927177
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  drugassociation@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="info_links">
+              <a class="" href="/">
+                <img src="/static/img/nav-bullet.png" alt="">
+                Home
+              </a>
+              <a class="" href="about">
+                <img src="/static/img/nav-bullet.png" alt="">
+                About
+              </a>
+              <a class="" href="search">
+                <img src="/static/img/nav-bullet.png" alt="">
+                Search
+              </a>
+              <a class="" href="add">
+                <img src="/static/img/nav-bullet.png" alt="">
+                Add Details
+              </a>
+              <a class="show" href="show">
+                <img src="/static/img/nav-bullet.png" alt="">
+                Show Details
+              </a>
+              <a class="" href="contact">
+                <img src="/static/img/nav-bullet.png" alt="">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_detail">
+            <h4>
+              Info
+            </h4>
+            <p>
+              Join us today and become a part of the Nanded District Chemist & Drug Association to contribute to the
+              growth
+              and development of the pharmaceutical sector while making a positive impact on the lives of people in our
+              community.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-0">
+          <h4>
+            Subscribe
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Barari iTechs Pvt Ltd</a>
+      </p>
+    </div>
+  </footer>
+
+  <!--                                   footer section                                            -->
+  <!--                                      jQery                                 -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
+  <script>
+    function toggleTable(tableId) {
+      var table = document.getElementById(tableId);
+      if (table.style.display === 'none' || table.style.display === '') {
+        table.style.display = 'block';
+      } else {
+        table.style.display = 'none';
+      }
+    }
+  </script>
+  <script>
+    function saveDetails() {
+      var selectedStock = document.getElementById('stockSelect').value;
+      var selectedCompany = document.getElementById('companySelect').value;
+
+      // Check if both stock and company are selected and not empty
+      if (selectedStock && selectedCompany) {
+        // Both stock and company are selected and not empty, proceed to save
+        $.ajax({
+          type: 'POST',
+          url: 'save_details/',  // Update with the actual URL
+          data: {
+            selected_stock: selectedStock,
+            selected_company: selectedCompany,
+            csrfmiddlewaretoken: '{{ csrf_token }}',  // Include the CSRF token
+          },
+          success: function (response) {
+            alert(response.message);
+          },
+          error: function (xhr, textStatus, errorThrown) {
+            alert('Error: ' + errorThrown);
+          }
+        });
+      } else {
+        // Show an error message if either stock or company is empty
+        alert('Please select both Stock and Company before saving.');
+      }
+    }
+  </script>
+  <script>
+
+    function deleteDetails() {
+      var selectedStock = document.getElementById('stockSelect').value;
+      var selectedCompany = document.getElementById('companySelect').value;
+
+      // Check if both stock and company are selected and not empty
+      if (selectedStock && selectedCompany) {
+        $.ajax({
+          type: 'POST',
+          url: "{% url 'delete_details' %}",  // Use the URL pattern name
+          data: {
+            stock: selectedStock,
+            company: selectedCompany,
+            csrfmiddlewaretoken: '{{ csrf_token }}',   // Include the CSRF token
+          },
+          success: function (response) {
+            alert(response.message);
+
+          },
+          error: function (xhr, textStatus, errorThrown) {
+            alert('Error: ' + errorThrown);
+          }
+        });
+      } else {
+        alert('Please select both Stock and Company before deleting.');
+      }
+    }
+
+  </script>
+</body>
+
+</html>

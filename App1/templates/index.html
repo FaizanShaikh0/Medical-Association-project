@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="/static/images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title> NANDED DISTRICT CHEMIST & DRUG ASSOCIATION</title>
+  <!--slider script-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="/static/css/responsive.css" rel="stylesheet" />
+
+  <style>
+    .list {
+      color: #ffffff;
+    }
+
+    .containerr {
+      display: flex;
+      margin: 10px;
+      margin-left: 60px;
+    }
+
+    .contenttt {
+      width: 50%;
+      height: 100vh;
+
+    }
+
+    .flex-box {
+      margin: 50px;
+      font-size: 18px;
+    }
+
+    .slidesss {
+      display: flex;
+      /* justify-content: center;
+    align-items: center; */
+    }
+
+    .contenttt img {
+      height: 85vh;
+      width: 100%;
+      /* align-items: center; */
+
+    }
+
+    .btnn {
+      background: rgb(52, 51, 51);
+      padding: 2rem;
+      color: #ffff;
+      border-radius: 50%;
+      size: 20px;
+      margin-right: 40px;
+      margin-left: 40px;
+    }
+
+    .btnn::after {
+      color: #fff;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+
+  <div class="hero_area" style="background-color: #020230; padding-bottom: 10px;">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="{% url 'home' %}">
+            <span>CHEMIST & <br>DRUG ASSOCIATION</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'aboutus' %}">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'search' %}">Search</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'add' %}">Add_details</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'show' %}">Show details</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}" style="color: #ffffff;">Contact Us</a>
+              </li>
+            </ul>
+            <div class="quote_btn-container">
+              <form class="form-inline">
+                <!-- <button class="btn   nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button> -->
+              </form>
+
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <section class="sliderAr">
+      <header>
+        <div class="containerrr swiper mySwiper">
+          <div class="contenttt swiper-wrapper">
+            <div class="slidesss swiper-slide">
+              <img src="/static/img/img3.jpg" alt="">
+            </div>
+
+            <div class="slidesss swiper-slide">
+              <img src="/static/img/img4.jpg" alt="">
+            </div>
+
+            <div class="slidesss swiper-slide">
+              <img src="/static/img/img5.jpg" alt="">
+            </div>
+
+            <div class="slidesss swiper-slide">
+              <img src="/static/img/img6.jpg" alt="">
+            </div>
+          </div>
+          <div class="swiper-button-next btnn"></div>
+          <div class="swiper-button-prev btnn"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </header>
+    </section>
+
+    <!-- slider section -->
+
+
+    <!-- end slider section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding-bottom " style="margin-top: 130px;">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                President Speakes
+              </h2>
+            </div>
+            <p>
+              Greetings from IMA Pune. Our new team has taken over from 1 st April 22.
+              With all the many accolades received by IMA Pune at State and National levels due to phenomenal work done
+              by previous teams and Presidents, we will continue the legacy and see the crowning glory shine further.
+              We wish to improve our image in Society.
+
+              Over the last 5-6 years, our fraternity all over India is facing many problems, including MedicoLegal
+              mishaps, unjust FIRs unjust new laws, and amendments regarding our profession which lead to an increase in
+              violence against healthcare. Obviously, we were shocked, worried, and disturbed. For us a safe, calm, and
+              secure atmosphere are desirable.With deepest heartfelt condolences to Dr. Archana Sharma a Dausa,
+              Rajasthan based gynecologist, who was running a maternity home for 25 years saving lot many lives, but who
+              was made to commit suicide under severe stress and pressure, due to an unjust FIR of 302 slapped on her
+              when she couldn’t save the life of a 22-year-old 4 th gravida with previous three female children, and who
+              had a natural complication of heavy post-delivery bleeding called Post Partum Haemorrhage, we start our
+              year with the THEME: PROTECT YOUR HEALERS.
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="/static/img/home.png" alt="">
+            <h3 style="margin-left: 150px; color: #f30606;">Shantanu S.Kodgire</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- info section -->
+
+  <!-- Name List section -->
+
+  <section class="containerr">
+    <div class="flex-box">
+      <section>
+        <p><strong>VICE PRESEDENT (CITY)</strong></p>
+        <p style="color: #f30606;"><strong>ANILKUMAR R. TOSHNIWAL</strong></p>
+        <p><strong>VICE PRESIDENT (GRAMIN)</strong></p>
+        <p style="color: #f30606;"><strong>VIVEK M. DESHMUKH TREASURER</strong></p>
+        <p><strong>KUNAL D. KANDKURTE</strong> </p>
+        <p style="color: #f30606;"><strong>JOINT SECRETARY (CITY)</strong></p>
+        <p><strong>NITIN P. GANJEWAR</strong></p>
+        <p style="color: #f30606;"><strong>JOINT SECRETARY(GRAMIN)</strong></p>
+        <p><strong>DEEPAK S. CHALIKWAR (KANDHAR)</strong> </p>
+        <p style="color: #f30606;"><strong>VINOD B.BODKE (DEGLOOR)</strong></p>
+    </div>
+
+    <div class="flex-box">
+      <section>
+        <p><strong>SUDHAKAR D. KALE</strong></p>
+        <p style="color: #f50303;"><strong>ORG. SECRETARY</strong></p>
+        <p><strong>DEEPAK M. PAWDE</strong></p>
+        <p style="color: #f50303;"><strong>EXECUTIVE MEMBER (CITY)</strong></p>
+        <p><strong>SHAMENDRA S.HUNDIWALA </strong></p>
+        <p style="color: #f50303;"><strong>RAJESH B. BULBULE</strong></p>
+        <p><strong>LAXMIKANT N. LOKMANWAR</strong> </p>
+        <p style="color: #f50303;"><strong>SAMEER O. TAMMEWAR</strong> </p>
+        <p><strong>BALANAND J. GABALE (MUKHED)</strong></p>
+      </section>
+    </div>
+
+    <div class="flex-box"><strong>
+        <section>
+          <p><strong>SHRIKANT L. GUNJKAR</strong></p>
+          <p style="color: #f50303;"><strong>ABDUL BARI HADI MOHD. YOUSUF</strong></p>
+          <p><strong>SACHIN V. KISWE</strong></p>
+          <p style="color: #f50303;"><strong>RAMESH R. PURI </strong></p>
+          <p><strong>SAYYED EQBAL AHMED</strong></p>
+          <p style="color: #f50303;"><strong>GIRISH G. DESHMUKH</strong></p>
+          <p><strong>EXECUTIVE MEMBER (GRAMIN )</strong></p>
+          <p style="color: #f50303;"><strong>RAJARAM N. GATLEWAR (KINWAT)</strong></p>
+          <p><strong>DINESH G. MOTE (LOHA)</strong></p>
+        </section>
+    </div>
+
+    <div class="flex-box">
+      <section>
+        <p><strong>M. BALAPURKAR (DHARMABAD)</strong></p>
+        <p style="color: #f50303;"><strong>RAJESHWAR REDDY M. LOKAWAD (BHOKAR)</strong></p>
+        <p><strong>SHANKAR D. DESHMUKH (UMRI)</strong></p>
+        <p style="color: #f50303;"><strong>VIJAYKUMAR V. KUNCHANWAR (BILOLI)</strong></p>
+        <p><strong>SAINATH G TEKALE (ARDHAPUR)</strong></p>
+        <p style="color: #f50303;"><strong>SAMAR M. TRIPATHI (MAHUR)</strong> </p>
+        <p><strong>SHANKAR V. WANKHEDE (HIMAYATNAGAR)</strong></p>
+        <p style="color: #f50303;"><strong>SHRIDHAR V. CHAVAN (NAIGAON)</strong></p>
+        <p><strong>VISHWAS D.DESHMUKH (HADGAON)</strong></p>
+        <p style="color: #f50303;"><strong>BALAJI D.SURIVANSHI (MUDKHED)</strong></p>
+      </section>
+    </div>
+  </section>
+  <!-- End List section -->
+
+  {% include "Footer.html" %}
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="/static/js/slider.js"></script>
+
+</body>
+
+</html>

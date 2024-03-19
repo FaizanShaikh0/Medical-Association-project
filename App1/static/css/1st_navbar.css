@@ -1,0 +1,27 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Set your preferred background color */
+    color: #fff; /* Set your preferred text color */
+    padding: 10px 20px;
+  }
+  
+  .logo img {
+    max-width: 100px; /* Adjust the size of your logo */
+  }
+  
+  .info {
+    text-align: right;
+  }
+  
+  .info p {
+    margin-bottom: 5px;
+  }
+  

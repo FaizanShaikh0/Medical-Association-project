@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="/static/img/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Hostit</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="/static/css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area" style="background-color: #020230;">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>CHEMIST & <br>DRUG ASSOCIATION</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item ">
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'aboutus' %}">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'search' %}">Search</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'add' %}">Add_details</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'show' %}">Show details</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}" style="color: #ffffff;">Contact Us</a>
+            </li>
+            </ul>
+            <div class="quote_btn-container">
+
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- contact section -->
+
+<!-- contact section -->
+    <section class="contact_section layout_padding">
+      <div class="container">
+          <div class="heading_container heading_center" style="margin-bottom: 110px;">
+              <h2>
+                  Get In Touch
+              </h2>
+          </div>
+          <div class="row contact-container border border-primary p-4">
+              <div class="col-md-4 contact-section">
+                  <!-- Add 'border border-primary rounded p-4' classes for the blue border -->
+                  <i class="bi bi-geo-alt-fill fs-1" style="padding-left: 80px;"></i>
+                  <h3 style="color: #e13e20; margin-bottom: 20px;">Nanded Branch</h3>
+                  <address style="font-weight: 500;">Nanded Medial Association <br>Chemist Bhavan Behind Cambrigde High School Shivaji Nagar Nanded-431602</address>
+              </div>
+              <div class="col-md-4 contact-section telephone-section" style="padding-left: 120px;">
+                  <!-- Add 'border border-primary rounded p-4' classes for the blue border -->
+                  <i class="bi bi-phone-vibrate-fill fs-1" style="padding-left: 40px;"></i>
+                  <h3 style="color: #e13e20; margin-bottom: 20px;">Telephone</h3>
+                  <div style="font-weight: 500; margin-left: 15px;">
+                  <span>02024464771</span>
+                  <br>
+                  <span>02024430042</span>
+                  <br>
+                  <span>7350214512</span></div>
+              </div>
+              <div class="col-md-4 contact-section" style="padding-left: 90px;">
+                  <!-- Add 'border border-primary rounded p-4' classes for the blue border -->
+                  <i class="bi bi-envelope-at-fill fs-1" style="margin-left: 70px;"></i>
+                  <h3 style="color: #e13e20; margin-bottom: 20px; margin-left: 60px;">Email</h3>
+                  <div style="font-weight: 500;">
+                  <span>nandedmedical@gmail.com ,</span>
+                  <br>
+                  <span>nandedassociation@gmail.com</span></div>
+              </div>
+          </div>
+      </div>
+    </section>
+<!-- end contact section -->
+
+  <!-- end contact section -->
+
+  <!-- info section -->
+
+  {% include "Footer.html" %}
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
+
+</body>
+
+</html>

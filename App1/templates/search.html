@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="/static/img/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title> NANDED DISTRICT CHEMIST & DRUG ASSOCIATION</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="/static/css/responsive.css" rel="stylesheet" />
+  <link href="/static/css/search.css" rel="stylesheet" />
+
+</head>
+<body>
+ <!-- header section strats -->
+ 
+ <header class="header_section">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg custom_nav-container ">
+      <a class="navbar-brand" href="index.html">
+        <span>CHEMIST & <br>DRUG ASSOCIATION</span>
+
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class=""> </span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'aboutus' %}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'search' %}">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'add' %}">Add_details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'show' %}">Show details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}" style="color: #ffffff;">Contact Us</a>
+        </li>
+        </ul>
+        <div class="quote_btn-container">
+          <form class="form-inline">
+            <!-- <button class="btn   nav_search-btn" type="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button> -->
+          </form>
+
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- end header section -->
+      <!--- search bar container-->
+
+   <div class="search-bars-container">
+    <div class="search-bars-container" style="margin-bottom: 350px;">
+        <form method="get" action="{% url 'search_view' %}">
+          <h5 style="margin-left: 70px; margin-bottom: 20px;"><b>Company Name</b></h5>
+            <div class="search-container">
+                <input type="text" name="q" value="{{ query }}">
+                <button type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+    
+    <form method="get" action="{% url 'search_stockiest' %}">
+      <h5 style="margin-left: 70px; margin-bottom: 20px;"><b>Stockiest Name</b></h5>
+        <div class="search-container" style="margin-bottom: 350px;">
+            <input type="text" name="stock" value="{{ company }}">
+            <button type="submit">Search</button>
+        </div>
+    </form>
+
+    <form method="get" action="{% url 'search_product' %}">
+      <h5 style="margin-left: 70px; margin-bottom: 20px;"><b>Product Name</b></h5>
+        <div class="search-container" style="margin-bottom: 350px;">
+            <input type="text" name="product" value="{{ product }}">
+            <button type="submit">Search</button>
+        </div>
+    </form>
+</div>
+
+{% if results %}
+{% if query %}
+<div class="col-md-8 offset-md-2 mb-5" style="margin-top: -380px;">
+    <h2 class="table table-dark table-striped col-md-6 offset-md-3 " style="text-align:center;">{{ query }}</h2> <!-- Display the company name as the heading -->
+    <table class="table table-dark table-striped col-md-6 offset-md-3" style="margin-top: 50px; text-align: center;">
+        <thead>
+            <tr>
+                <th><h4>Stockiest Name</h4></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td><h5>{{ result.stockiest_name }}</h5></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+
+{% if stock %}
+    <div class="col-md-8 offset-md-2 mb-5" style="margin-top: -380px;">
+        <h2 class="table table-dark table-striped col-md-6 offset-md-3" style="padding-left: 150px;">{{ stock }}</h2> <!-- Display the stockiest name as the heading -->
+        <thead>
+              <table class="table table-dark table-striped col-md-6 offset-md-3" style="margin-top: 50px; text-align: center;">
+                <tr>
+                    <!-- <th>Stockiest Name</th> -->
+                    <th><h3>Company Name</h3></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                <tr>
+                    <!-- <td>{{ result.stock_name }}</td> -->
+                    <td><h4>{{ result.company_name }}</h4></td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endif %}
+
+{% if product %}
+<div class="col-md-8 offset-md-2 mb-5" style="margin-top: -380px;">
+  <h2 class="table table-dark table-striped " style="text-align: center;">{{ product }}<p style="font-size: 20px; padding-top: 10px; padding-bottom: 20px;">({{ pcontain }})</p></h2> 
+    <table class="table table-dark table-striped" style="margin-top: 50px;">
+        <thead>
+            <tr>
+                <th><h4>Company Name</h4></th>
+                <th><h4>Stockiest Name</h4></th>
+                <th><h4>Mobile Number</h4></th>
+                <th><h4>Telephone Number</h4></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td><h5>{{ result.company_name }}</h5></td>
+                <td><h5>{{ result.stockiest_name }}</h5></td>
+                <td><h5>{{ result.mobile }}</h5></td>
+                <td><h5>{{ result.telephone }}</h5></td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+{% else %}
+    <h5 style="padding-left: 700px; margin-top: -350px;">No records found</h5>
+{% endif %}
+
+        <!-- End of results table -->
+
+<!-- 2nd table end -->
+    <!-- footer section -->
+
+    <section class="info_section layout_padding2" style="margin-top: 150px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="info_contact">
+              <h4>
+                Address
+              </h4>
+              <div class="contact_link_box">
+                <a href="">
+                  <i class="bi bi-house-door"></i>
+                  <span>
+                    Chemist Bhavan Behind Cambrigde High School Shivaji Nagar Nanded-431602
+                  </span>
+                </a>
+                <a href="">
+                  <i class="bi bi-telephone"></i>
+                  <span>
+                    Call : +91 8087927177
+                  </span>
+                </a>
+                <a href="">
+                  <i class="bi bi-envelope"></i>
+                  <span>
+                  drugassociation@gmail.com
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="info_social">
+              <!-- <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a> -->
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_link_box">
+              <h4>
+                Links
+              </h4>
+              <div class="info_links">
+                <a class="" href="{% url 'home' %}">
+                  <img src="/static/img/nav-bullet.png" alt="">
+                  Home
+                </a>
+                <a class="" href="{% url 'aboutus' %}">  <!-- This should be href="{% url 'aboutus' %}" -->
+                  <img src="/static/img/nav-bullet.png" alt="">
+                  About
+                </a>
+                <a class="" href="{% url 'search' %}">
+                  <img src="/static/img/nav-bullet.png" alt="">
+                  Search
+                </a>
+                <a class="" href="{% url 'add' %}">
+                  <img src="/static/img/nav-bullet.png" alt="">
+                  Add Details
+                </a>
+                <a class="" href="{% url 'show' %}">
+                  <img src="/static/img/nav-bullet.png" alt="">
+                  Show Details
+                </a>
+                <a class="" href="{% url 'contact' %}">
+                  <img src="/static/img/nav-bullet.png" alt="">
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_detail">
+              <h4>
+                Info
+              </h4>
+              <p>
+                Join us today and become a part of the Nanded District Chemist & Drug Association to contribute to the growth and development of the pharmaceutical sector while making a positive impact on the lives of people in our community.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-0">
+            <h4>
+              Subscribe
+            </h4>
+            <form action="#">
+              <input type="text" placeholder="Enter email" />
+              <button type="submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+          <!-- <div class="col-md-3 mb-0">
+            <h4>
+              Subscribe
+            </h4>
+            <form action="#">
+              <input type="text" placeholder="Enter email" />
+              <button type="submit">
+                Subscribe
+              </button>
+            </form> -->
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- end info section -->
+  
+  
+    <!-- footer section -->
+    <footer class="footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">Barari iTechs Pvt Ltd</a>
+        </p>
+      </div>
+    </footer>
+    <!-- footer section -->
+    
+      <!-- jQery -->
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <!-- bootstrap js -->
+      <script src="js/bootstrap.js"></script>
+      <!-- custom js -->
+      <script src="js/custom.js"></script>
+      <!-- end footer  -->
+    </body>
+</html>
